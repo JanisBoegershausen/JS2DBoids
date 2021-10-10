@@ -13,8 +13,8 @@
 
 <body>
   <returnHomeButton onclick="window.open('https://janisboegershausen.github.io/');">Home</returnHomeButton>
-  <headline> Raytracer </headline>
-  <textSection> A simple <coloredText style="color: tomato">(WIP)</coloredText> raytracer written in javascript. Press enter to start a new render. </textSection>
+  <headline> Boids </headline>
+  <textSection> A simple simulation of boids written in javascript. </textSection>
   <textSection>
     Canvas
     <div style="width: 500px; height: 500px; margin: auto" id="rendering-canvas"></div>
@@ -22,7 +22,12 @@
   <textSection>
     Info
     <div style="font-size: 20px; margin-top: 10px">
-      Placeholder.
+      Left-click to spawn a new boid at the cursor. <br>
+      <br>
+      The boid simulation is done by making each boid follow three behaviors:<br>
+      1. Move in the same direction as the average nearby boids <br>
+      2. Move towards the center of all nearby boids<br>
+      3. Avoid other boids if they get too close<br>
     </div>
   </textSection>
 </body>
