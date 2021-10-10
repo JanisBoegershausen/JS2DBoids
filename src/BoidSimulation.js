@@ -13,9 +13,12 @@ function setup() {
 }
 
 function draw() {
+  // Fade the canvas to black for the trail effect the boids have
   noStroke();
-  fill(0, 0, 0, 50);
+  fill(0, 0, 0, 35);
   rect(0, 0, 500, 500);
+
+  // Update and draw all boids
   boids.forEach(element => {
     element.Update(1);
     element.Draw();
@@ -24,10 +27,12 @@ function draw() {
   // Todo: Extract math and vector stuff into its own github repo and link to it in other projects!
 }
 
+// Spawn a boid with a click
 function mouseClicked() {
   boids.push(new Boid(new Vector(mouseX, mouseY), Color.Random()));
 }
 
+// Spawn  a boid at a random position with a random color
 function SpawnRandomBoid() {
   boids.push(new Boid(
     new Vector(RandomInRange(0, 500), RandomInRange(0, 500)),
